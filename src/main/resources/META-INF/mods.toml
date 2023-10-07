@@ -1,0 +1,12 @@
+modLoader = "javafml"
+loaderVersion = "[36,)"
+license = "MIT"
+
+[[mods]]
+modId = "embeddiumextension"
+version = "${version}"
+displayName = "EmbeddiumExtension"
+authors="TeamPotato"
+description = '''
+
+'''
