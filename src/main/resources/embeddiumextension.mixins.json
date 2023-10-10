@@ -32,7 +32,6 @@
     "sodium.accessibility.MixinSodiumGameOptionPages",
     "sodium.biome_blend.MixinChunkRenderCache",
     "sodium.fast_random.MixinBlockRenderer",
-    "sodium.gui_scale.MixinSliderControl",
     "sodium.resolution.MixinSodiumGameOptionPages",
     "sodium.scrollable_page.MixinSodiumOptionsGUI",
     "stars.MixinWorldRenderer",
