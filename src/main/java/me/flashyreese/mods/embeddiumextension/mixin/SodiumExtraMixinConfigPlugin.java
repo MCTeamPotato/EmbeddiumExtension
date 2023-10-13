@@ -7,13 +7,6 @@ import net.minecraftforge.fml.loading.FMLLoader;
 public class SodiumExtraMixinConfigPlugin extends AbstractCaffeineConfigMixinPlugin {
 
     private static final String MIXIN_PACKAGE_ROOT = "me.flashyreese.mods.embeddiumextension.mixin.";
-    public static boolean betterDivingNotLoaded;
-    public static boolean primalWinerNotLoaded;
-
-    public SodiumExtraMixinConfigPlugin() {
-        betterDivingNotLoaded = FMLLoader.getLoadingModList().getModFileById("better_diving") == null;
-        primalWinerNotLoaded = FMLLoader.getLoadingModList().getModFileById("primalwinter") == null;
-    }
 
     @Override
     protected CaffeineConfig createConfig() {
@@ -25,7 +18,6 @@ public class SodiumExtraMixinConfigPlugin extends AbstractCaffeineConfigMixinPlu
                 .addMixinOption("compat", true)
                 .addMixinOption("fog", true)
                 .addMixinOption("fog_falloff", true)
-                .addMixinOption("gui", true)
                 .addMixinOption("instant_sneak", true)
                 .addMixinOption("light_updates", true)
                 .addMixinOption("particle", true)
@@ -44,8 +36,8 @@ public class SodiumExtraMixinConfigPlugin extends AbstractCaffeineConfigMixinPlu
                 .addMixinOption("sodium.gui_scale", true)
                 .addMixinOption("sodium.resolution", true)
                 .addMixinOption("sodium.scrollable_page", true)
-                .addMixinOption("stars", betterDivingNotLoaded)
-                .addMixinOption("sun_moon", betterDivingNotLoaded && primalWinerNotLoaded)
+                .addMixinOption("stars", true)
+                .addMixinOption("sun_moon", true)
                 .addMixinOption("toasts", true)
 
                 .withInfoUrl("https://github.com/FlashyReese/sodium-extra-fabric/wiki/Configuration-File")

@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(targets = "me.jellysquid.mods.sodium.client.model.quad.blender.ConfigurableColorBlender")
-public class MixinChunkRenderCache {
+public class MixinConfigurableColorBlender {
     @Unique
     private final BiomeColorBlender ee$linearFlatColorBlender = new LinearFlatColorBlender();
 

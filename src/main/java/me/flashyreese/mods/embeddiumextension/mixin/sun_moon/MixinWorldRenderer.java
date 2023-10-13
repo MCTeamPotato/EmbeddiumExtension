@@ -3,11 +3,12 @@ package me.flashyreese.mods.embeddiumextension.mixin.sun_moon;
 import me.flashyreese.mods.embeddiumextension.client.SodiumExtraClientMod;
 import net.minecraft.client.render.SkyProperties;
 import net.minecraft.client.render.WorldRenderer;
+import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(WorldRenderer.class)
@@ -23,16 +24,11 @@ public class MixinWorldRenderer {
     @Final
     private static Identifier MOON_PHASES;
 
-    @Redirect(
-            method = "renderSky",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/client/render/SkyProperties;getFogColorOverride(FF)[F"
-            )
-    )
-    public float[] redirectGetFogColorOverride(SkyProperties instance, float skyAngle, float tickDelta) {
+
+    @ModifyVariable(method = "renderSky", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/client/render/SkyProperties;getFogColorOverride(FF)[F"))
+    public float[] redirectGetFogColorOverride(float[] f1) {
         if (SodiumExtraClientMod.options().detailSettings.sunMoon) {
-            return instance.getFogColorOverride(skyAngle, tickDelta);
+            return f1;
         } else {
             return null;
         }

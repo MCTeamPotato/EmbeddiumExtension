@@ -154,8 +154,8 @@ public class SodiumExtraGameOptions {
 
         public DetailSettings() {
             this.sky = true;
-            this.sunMoon = SodiumExtraMixinConfigPlugin.betterDivingNotLoaded;
-            this.stars = SodiumExtraMixinConfigPlugin.primalWinerNotLoaded && SodiumExtraMixinConfigPlugin.betterDivingNotLoaded;
+            this.sunMoon = true;
+            this.stars = true;
             this.rainSnow = true;
             this.biomeColors = true;
             this.skyColors = true;

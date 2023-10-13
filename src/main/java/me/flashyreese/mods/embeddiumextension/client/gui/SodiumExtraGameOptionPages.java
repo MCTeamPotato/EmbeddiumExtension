@@ -6,7 +6,6 @@ import me.flashyreese.mods.embeddiumextension.client.SodiumExtraClientMod;
 import me.flashyreese.mods.embeddiumextension.client.gui.options.control.SliderControlExtended;
 import me.flashyreese.mods.embeddiumextension.client.gui.options.storage.SodiumExtraOptionsStorage;
 import me.flashyreese.mods.embeddiumextension.common.util.ControlValueFormatterExtended;
-import me.flashyreese.mods.embeddiumextension.mixin.SodiumExtraMixinConfigPlugin;
 import me.flashyreese.mods.embeddiumextension.mixin.fog.DimensionOptionsAccessor;
 import me.jellysquid.mods.sodium.client.gui.options.*;
 import me.jellysquid.mods.sodium.client.gui.options.control.ControlValueFormatter;
@@ -165,25 +164,21 @@ public class SodiumExtraGameOptionPages {
                 .setBinding((opts, value) -> opts.detailSettings.sky = value, opts -> opts.detailSettings.sky)
                 .build()
         );
-        if (SodiumExtraMixinConfigPlugin.betterDivingNotLoaded) {
-            builder.add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                    .setName(new TranslatableText("embeddiumextension.option.stars").getString())
-                    .setTooltip(new TranslatableText("embeddiumextension.option.stars.tooltip").getString())
-                    .setControl(TickBoxControl::new)
-                    .setBinding((opts, value) -> opts.detailSettings.stars = value, opts -> opts.detailSettings.stars)
-                    .build()
-            );
-            if (SodiumExtraMixinConfigPlugin.primalWinerNotLoaded) {
-                builder.add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                                .setName(new TranslatableText("embeddiumextension.option.sun_moon").getString())
-                                .setTooltip(new TranslatableText("embeddiumextension.option.sun_moon.tooltip").getString())
-                                .setControl(TickBoxControl::new)
-                                .setBinding((opts, value) -> opts.detailSettings.sunMoon = value, opts -> opts.detailSettings.sunMoon)
-                                .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
-                                .build()
-                        );
-            }
-        }
+        builder.add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                .setName(new TranslatableText("embeddiumextension.option.stars").getString())
+                .setTooltip(new TranslatableText("embeddiumextension.option.stars.tooltip").getString())
+                .setControl(TickBoxControl::new)
+                .setBinding((opts, value) -> opts.detailSettings.stars = value, opts -> opts.detailSettings.stars)
+                .build()
+        );
+        builder.add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                .setName(new TranslatableText("embeddiumextension.option.sun_moon").getString())
+                .setTooltip(new TranslatableText("embeddiumextension.option.sun_moon.tooltip").getString())
+                .setControl(TickBoxControl::new)
+                .setBinding((opts, value) -> opts.detailSettings.sunMoon = value, opts -> opts.detailSettings.sunMoon)
+                .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
+                .build()
+        );
         groups.add(builder
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
                         .setName(parseVanillaString("soundCategory.weather"))
