@@ -118,10 +118,6 @@ public class OptionPageScrollFrame extends AbstractFrame {
             tooltip.add(Language.getInstance().reorder(new LiteralText(Formatting.GRAY + "Performance Impact: " + impact.toDisplayString())));
         }
 
-        /*if (option.getFlags().contains(OptionFlag.REQUIRES_GAME_RESTART)) {
-            tooltip.add(Language.getInstance().reorder(Text.translatable("sodium.option_flag.requires_game_restart.tooltip").formatted(Formatting.RED)));
-        }*/
-
         int boxHeight = (tooltip.size() * 12) + boxPadding;
         int boxYLimit = boxY + boxHeight;
         int boxYCutoff = this.dim.getLimitY() - 25 /*- 64*/;
