@@ -24,7 +24,7 @@ abstract class MixinLivingEntityRenderer<T extends LivingEntity, M extends Entit
         super(dispatcher);
     }
 
-    @Inject(method = "render(Lnet/minecraft/entity/LivingEntity;FFLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "render(Lnet/minecraft/entity/LivingEntity;FFLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/util/math/MatrixStack;push()V", shift = At.Shift.BEFORE, ordinal = 0), cancellable = true)
     private void onRender(T entity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, CallbackInfo ci) {
         if (entity instanceof ArmorStandEntity && !SodiumExtraClientMod.options().renderSettings.armorStand) {
             ci.cancel();
@@ -34,6 +34,7 @@ abstract class MixinLivingEntityRenderer<T extends LivingEntity, M extends Entit
         }
     }
 
+    @SuppressWarnings("TypeParameterHidesVisibleType")
     @Inject(method = "hasLabel(Lnet/minecraft/entity/LivingEntity;)Z", at = @At(value = "HEAD"), cancellable = true)
     private <T extends LivingEntity> void hasLabel(T entity, CallbackInfoReturnable<Boolean> cir) {
         if (entity instanceof AbstractClientPlayerEntity && !SodiumExtraClientMod.options().renderSettings.playerNameTag) {
