@@ -14,7 +14,11 @@ import org.jetbrains.annotations.NotNull;
 
 public class HudRenderImpl {
 
-    private final MinecraftClient client = MinecraftClient.getInstance();
+    private final MinecraftClient client;
+    
+    public HudRenderImpl() {
+        this.client = MinecraftClient.getInstance();
+    }
 
     public void onHudRender(MatrixStack matrixStack) {
         if (!this.client.options.debugEnabled) {
