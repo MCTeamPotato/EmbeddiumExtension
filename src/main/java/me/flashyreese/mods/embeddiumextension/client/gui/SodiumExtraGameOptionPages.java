@@ -5,7 +5,7 @@ import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import me.flashyreese.mods.embeddiumextension.client.SodiumExtraClientMod;
 import me.flashyreese.mods.embeddiumextension.client.gui.options.control.SliderControlExtended;
 import me.flashyreese.mods.embeddiumextension.client.gui.options.storage.SodiumExtraOptionsStorage;
-import me.flashyreese.mods.embeddiumextension.common.util.ControlValueFormatterExtended;
+import me.flashyreese.mods.embeddiumextension.client.gui.options.control.ControlValueFormatterExtended;
 import me.flashyreese.mods.embeddiumextension.mixin.fog.DimensionOptionsAccessor;
 import me.jellysquid.mods.sodium.client.gui.options.*;
 import me.jellysquid.mods.sodium.client.gui.options.control.ControlValueFormatter;

@@ -1,4 +1,4 @@
-package me.flashyreese.mods.embeddiumextension.common.util;
+package me.flashyreese.mods.embeddiumextension.client.gui.options.control;
 
 import me.jellysquid.mods.sodium.client.gui.options.control.ControlValueFormatter;
 import net.minecraft.client.MinecraftClient;

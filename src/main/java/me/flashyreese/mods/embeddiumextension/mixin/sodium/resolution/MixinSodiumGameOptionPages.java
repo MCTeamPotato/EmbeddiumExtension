@@ -1,7 +1,7 @@
 package me.flashyreese.mods.embeddiumextension.mixin.sodium.resolution;
 
 import me.flashyreese.mods.embeddiumextension.client.gui.options.control.SliderControlExtended;
-import me.flashyreese.mods.embeddiumextension.common.util.ControlValueFormatterExtended;
+import me.flashyreese.mods.embeddiumextension.client.gui.options.control.ControlValueFormatterExtended;
 import me.jellysquid.mods.sodium.client.gui.SodiumGameOptionPages;
 import me.jellysquid.mods.sodium.client.gui.options.OptionGroup;
 import me.jellysquid.mods.sodium.client.gui.options.OptionImpact;
