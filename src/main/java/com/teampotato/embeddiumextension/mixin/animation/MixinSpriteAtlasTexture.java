@@ -1,7 +1,7 @@
 package com.teampotato.embeddiumextension.mixin.animation;
 
-import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import com.teampotato.embeddiumextension.client.SodiumExtraClientMod;
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraft.client.texture.AbstractTexture;
 import net.minecraft.client.texture.Sprite;
 import net.minecraft.client.texture.SpriteAtlasTexture;

@@ -1,5 +1,6 @@
 package com.teampotato.embeddiumextension.mixin.compat;
 
+import com.teampotato.embeddiumextension.client.SodiumExtraClientMod;
 import com.teampotato.embeddiumextension.client.gui.SodiumExtraGameOptionPages;
 import me.jellysquid.mods.sodium.client.gui.SodiumOptionsGUI;
 import me.jellysquid.mods.sodium.client.gui.options.OptionPage;
@@ -21,10 +22,12 @@ public class MixinSodiumOptionsGUI {
 
     @Inject(method = "<init>", at = @At("TAIL"))
     private void init(CallbackInfo info) {
-        this.pages.add(SodiumExtraGameOptionPages.animation());
         this.pages.add(SodiumExtraGameOptionPages.particle());
-        this.pages.add(SodiumExtraGameOptionPages.detail());
-        this.pages.add(SodiumExtraGameOptionPages.render());
-        this.pages.add(SodiumExtraGameOptionPages.extra());
+        if (!SodiumExtraClientMod.REDUCE_NEW_OPTION_PAGES.get()){
+            this.pages.add(SodiumExtraGameOptionPages.animation());
+            this.pages.add(SodiumExtraGameOptionPages.detail());
+            this.pages.add(SodiumExtraGameOptionPages.render());
+            this.pages.add(SodiumExtraGameOptionPages.extra());
+        }
     }
 }

@@ -1,7 +1,7 @@
 package com.teampotato.embeddiumextension.mixin.sodium.resolution;
 
-import com.teampotato.embeddiumextension.client.gui.options.control.SliderControlExtended;
 import com.teampotato.embeddiumextension.client.gui.options.control.ControlValueFormatterExtended;
+import com.teampotato.embeddiumextension.client.gui.options.control.SliderControlExtended;
 import me.jellysquid.mods.sodium.client.gui.SodiumGameOptionPages;
 import me.jellysquid.mods.sodium.client.gui.options.OptionGroup;
 import me.jellysquid.mods.sodium.client.gui.options.OptionImpact;

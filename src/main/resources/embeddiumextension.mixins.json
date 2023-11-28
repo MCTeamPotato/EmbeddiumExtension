@@ -1,6 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
+  "package": "com.teampotato.embeddiumextension.mixin",
   "plugin": "com.teampotato.embeddiumextension.mixin.SodiumExtraMixinConfigPlugin",
   "compatibilityLevel": "JAVA_8",
   "client": [
@@ -8,6 +9,7 @@
     "biome_colors.MixinBiomeColors",
     "cloud.MixinSkyPropertiesOverworld",
     "compat.MixinSodiumOptionsGUI",
+    "compat.MixinSodiumGameOptionPages",
     "fog.DimensionOptionsAccessor",
     "fog.MixinBackgroundRenderer",
     "fog_falloff.MixinBackgroundRenderer",
@@ -42,6 +44,5 @@
   ],
   "injectors": {
     "defaultRequire": 1
-  },
-  "package": "com.teampotato.embeddiumextension.mixin"
+  }
 }
