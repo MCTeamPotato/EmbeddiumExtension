@@ -1,8 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "plugin": "me.flashyreese.mods.embeddiumextension.mixin.SodiumExtraMixinConfigPlugin",
-  "package": "me.flashyreese.mods.embeddiumextension.mixin",
+  "plugin": "com.teampotato.embeddiumextension.mixin.SodiumExtraMixinConfigPlugin",
   "compatibilityLevel": "JAVA_8",
   "client": [
     "animation.MixinSpriteAtlasTexture",
@@ -43,5 +42,6 @@
   ],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "package": "com.teampotato.embeddiumextension.mixin"
 }
