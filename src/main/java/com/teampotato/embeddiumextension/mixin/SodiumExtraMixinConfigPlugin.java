@@ -6,7 +6,7 @@ import net.minecraftforge.fml.loading.FMLLoader;
 
 public class SodiumExtraMixinConfigPlugin extends AbstractCaffeineConfigMixinPlugin {
 
-    private static final String MIXIN_PACKAGE_ROOT = "me.flashyreese.mods.embeddiumextension.mixin.";
+    private static final String MIXIN_PACKAGE_ROOT = "com.teampotato.embeddiumextension.mixin.";
 
     @Override
     protected CaffeineConfig createConfig() {
