@@ -19,8 +19,10 @@ public class HudRenderImpl {
     public HudRenderImpl() {
         this.client = MinecraftClient.getInstance();
     }
+
     @SubscribeEvent
     public void onRenderGameOverlay(RenderGameOverlayEvent.@NotNull Post event) {
+        if (!event.getType().equals(RenderGameOverlayEvent.ElementType.TEXT)) return;
         MatrixStack matrixStack = event.getMatrixStack();
         if (!this.client.options.debugEnabled) {
             if (SodiumExtraClientMod.options().extraSettings.showCoords) this.renderCoords(matrixStack);
